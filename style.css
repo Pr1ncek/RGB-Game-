@@ -4,12 +4,9 @@ body {
 }
 
 #headings {
-
-    max-height: 400px;
-    background-color: rgb(15, 15, 15);
-    padding: 3rem;
-
-
+  max-height: 400px;
+  background-color: rgb(15, 15, 15);
+  padding: 3rem;
 }
 
 #container {
@@ -19,7 +16,7 @@ body {
 
 .square {
   width: 30%;
-  background: #232323;
+  background-color: rgb(35, 35, 35);
   padding-top: 30%;
   float: left;
   margin: 1.66%;
@@ -44,30 +41,59 @@ h2 {
 }
 
 #menu {
-    text-align: center;
-    color: #fff;
-    padding: 1rem;
-    position: relative;
-    height: 3rem;
+  max-width: 60%;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+  height: 3rem;
+  margin: 0 auto;
 }
 
 #message {
-
-    position: absolute;
-    left: 28rem;
-    top: 2rem;
-    font-size: 1.5rem;
-    
+  position: absolute;
+  left: 18rem;
+  top: 1.3rem;
+  font-size: 1.5rem;
 }
 
 #playAgain {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  float: left;
+}
 
-    padding: .5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    position: absolute;
-    left: 11rem;
-    top: 1.5rem;
+#playAgain:hover,
+#playAgain:active,
+#playAgain:visited,
+#playAgain:focus {
+  outline: 0;
+}
 
+.btn {
+  padding: 0.5rem 1.7rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border-color: rgba(173, 40, 35, 0.911);
+  float: right;
+}
 
+.easy-button {
+    margin: 0 .5rem;
+}
+
+.hard-button {
+}
+
+.selected {
+  background-color: rgba(173, 40, 35, 0.911);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:active,
+.btn:visited,
+.btn:focus {
+  outline: 0;
 }

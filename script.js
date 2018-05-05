@@ -14,7 +14,37 @@ var headingDisplay = document.getElementById("headings");
 
 var playAgainButton = document.getElementById("playAgain");
 
-playAgainButton.addEventListener("click", playAgain);
+var easyButton = document.querySelector(".easy-button");
+
+var hardButton = document.querySelector(".hard-button");
+
+var easyMode = 0;
+
+function addEventListeners() {
+  playAgainButton.addEventListener("click", playAgain);
+
+  easyButton.addEventListener("click", function() {
+    if (!easyButton.classList.contains("selected")) {
+      numberOfColors = 3;
+      easyButton.classList.add("selected");
+      hardButton.classList.remove("selected");
+      easyMode = 3;
+      playAgain();
+    }
+  });
+
+  hardButton.addEventListener("click", function() {
+    if (!hardButton.classList.contains("selected")) {
+      numberOfColors = 6;
+      easyButton.classList.remove("selected");
+      hardButton.classList.add("selected");
+      easyMode = 0;
+      playAgain();
+    }
+  });
+}
+
+addEventListeners();
 
 function pickStartingColors(numberOfColors) {
   var colorsArray = [];
@@ -48,7 +78,7 @@ function checkAnswer() {
 }
 
 function changeColor(color) {
-  for (var i = 0; i < squares.length; i++) {
+  for (var i = 0; i < colors.length; i++) {
     squares[i].style.backgroundColor = color;
   }
 
@@ -63,8 +93,12 @@ function randomNumber(end) {
 
 function initializeSquares() {
   for (var i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
-    squares[i].addEventListener("click", checkAnswer);
+    if (i >= colors.length) {
+      squares[i].style.backgroundColor = "#232323";
+    } else {
+      squares[i].style.backgroundColor = colors[i];
+      squares[i].addEventListener("click", checkAnswer);
+    }
   }
 }
 
@@ -75,9 +109,11 @@ function playAgain() {
 
   colors = pickStartingColors(numberOfColors);
 
-  pickedColor = colors[randomNumber(squares.length - 1)];
+  pickedColor = colors[randomNumber(colors.length - 1)];
 
   colorDisplay.textContent = pickedColor;
+
+  console.log(pickedColor);
 
   initializeSquares();
 }
