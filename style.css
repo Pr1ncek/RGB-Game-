@@ -1,12 +1,15 @@
 body {
-  background-color: rgb(35, 35, 35);
+  background-color: #232323;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 #headings {
   max-height: 400px;
   background-color: rgb(15, 15, 15);
   padding: 3rem;
+  text-transform: uppercase;
 }
 
 #container {
@@ -16,16 +19,19 @@ body {
 
 .square {
   width: 30%;
-  background-color: rgb(35, 35, 35);
   padding-top: 30%;
   float: left;
   margin: 1.66%;
+  border-radius: 5%;
+  transition: background-color 0.5s;
+ 
 }
 
 h1 {
   color: white;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 200;
   padding: 0;
   margin: 0;
   margin-bottom: 2rem;
@@ -34,34 +40,29 @@ h1 {
 h2 {
   color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   padding: 0;
   margin: 0;
 }
 
 #menu {
-  max-width: 60%;
+  max-width: 100%;
   text-align: center;
-  color: #fff;
-  padding: 1rem;
-  position: relative;
-  height: 3rem;
   margin: 0 auto;
+  background-color: #fff;
+  margin-bottom: 2.5%;
 }
 
 #message {
-  position: absolute;
-  left: 18rem;
-  top: 1.3rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: inline-block;
+  width: 25%;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 #playAgain {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  float: left;
 }
 
 #playAgain:hover,
@@ -72,15 +73,10 @@ h2 {
 }
 
 .btn {
-  padding: 0.5rem 1.7rem;
-  font-size: 1.1rem;
-  border-radius: 5px;
   border-color: rgba(173, 40, 35, 0.911);
-  float: right;
 }
 
 .easy-button {
-    margin: 0 .5rem;
 }
 
 .hard-button {
@@ -91,9 +87,25 @@ h2 {
   color: #fff;
 }
 
-.btn:hover,
 .btn:active,
 .btn:visited,
 .btn:focus {
   outline: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: rgba(173, 40, 35, 0.911);
+  color: #fff;
+  cursor: pointer;
 }
